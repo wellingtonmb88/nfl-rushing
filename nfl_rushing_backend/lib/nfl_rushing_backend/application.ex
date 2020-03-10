@@ -4,10 +4,12 @@ defmodule NflRushingBackend.Application do
   @moduledoc false
 
   use Application
+  alias NflRushingBackend.PlayersStoreAgent
 
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      PlayersStoreAgent,
       # Start the endpoint when the application starts
       NflRushingBackendWeb.Endpoint
       # Starts a worker by calling: NflRushingBackend.Worker.start_link(arg)
