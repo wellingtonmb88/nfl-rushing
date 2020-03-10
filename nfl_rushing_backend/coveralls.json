@@ -1,0 +1,18 @@
+{
+  "skip_files": [
+    "lib/nfl_rushing_backend.ex",
+    "lib/nfl_rushing_backend/application.ex",
+    "lib/nfl_rushing_backend_web.ex",
+    "lib/nfl_rushing_backend_web/endpoint.ex",
+    "lib/nfl_rushing_backend_web/gettext.ex",
+    "lib/nfl_rushing_backend_web/router.ex",
+    "lib/nfl_rushing_backend_web/schema",
+    "lib/nfl_rushing_backend_web/channels",
+    "lib/nfl_rushing_backend_web/views",
+    "test/support"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "minimum_coverage": 90
+  }
+}
