@@ -19,8 +19,15 @@ defmodule NflRushingBackendWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", NflRushingBackendWeb do
-  #   pipe_through :api
-  # end
+  scope "/api" do
+    pipe_through :api
+
+    if Mix.env() == :dev do
+      forward "/graphiql", Absinthe.Plug.GraphiQL,
+        schema: NflRushingBackendWeb.Schema,
+        interface: :playground
+    end
+
+    forward "/graphql", Absinthe.Plug, schema: NflRushingBackendWeb.Schema
+  end
 end
