@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableToolbar component TableToolbar with numSelected == 0 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-regular makeStyles-root-1 MuiToolbar-gutters"
+>
+  <h6
+    className="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+    id="tableTitle"
+  >
+    NFL Rushing Players
+  </h6>
+</div>
+`;
+
+exports[`TableToolbar component TableToolbar with numSelected > 0 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-regular makeStyles-root-1 makeStyles-highlight-2 MuiToolbar-gutters"
+>
+  <h6
+    className="MuiTypography-root makeStyles-title-3 MuiTypography-subtitle1 MuiTypography-colorInherit"
+  >
+    1
+     selected
+  </h6>
+</div>
+`;

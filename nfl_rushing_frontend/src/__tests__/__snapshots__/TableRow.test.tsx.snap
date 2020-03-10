@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow component TableRow with Snapshot 1`] = `
+<tr
+  aria-checked={false}
+  className="MuiTableRow-root MuiTableRow-hover"
+  onClick={[Function]}
+  role="checkbox"
+  tabIndex={-1}
+>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-paddingCheckbox"
+  >
+    <span
+      aria-disabled={false}
+      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-24 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={null}
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <input
+          aria-labelledby="labelId-TableRow"
+          checked={false}
+          className="PrivateSwitchBase-input-27"
+          data-indeterminate={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+          />
+        </svg>
+      </span>
+    </span>
+  </td>
+  <th
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-paddingNone"
+    id="labelId-TableRow"
+    scope="row"
+  >
+    Adam Thielen
+  </th>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignLeft"
+  >
+    MIN
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignLeft"
+  >
+    WR
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    11
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    2
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0.1
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    15
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    7.5
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0.9
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    1
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    50
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root MuiTableCell-alignRight"
+  >
+    0
+  </td>
+</tr>
+`;
