@@ -10,7 +10,7 @@
           <input type="text" name="q" value="<%= @query %>" list="matches" placeholder="Filter..." phx-debounce="200" />
         </form>
       </div>
-      <div class="column">
+      <div class="column  column-20 column-offset-20">
         <a class="button" href="/download_csv?query=<%= @query%>&page=<%= @page %>&per_page=<%= @per_page %>">Export CSV From Page: <%= @page%></a>
       </div>
       <div class="column">
@@ -18,7 +18,7 @@
       </div>
     </div>
   </section>
-  <section class="container main">
+  <section class="container">
     <table  phx-keydown-window="keydown" phx-throttle="500">
       <thead>
         <tr>
@@ -83,16 +83,17 @@
       </div>
 
       <div class="column pagination-footer">
-        <%= if @page > 1 do %>
-        <span ><%= live_patch "Prev", to: Routes.live_path(@socket, PlayersLive, %{page: @page - 1}) %></span>
-        <% end %>
-        <%= for i <- (@page - @per_page)..(@page + @per_page), i > 0, i < (@total / @per_page) + 1 do %>
-        <span><%= live_patch "#{i}", to: Routes.live_path(@socket, PlayersLive, %{page: i}) %></span>
-        <% end %>
-
-        <%= if @page < @total / @per_page do %>
-        <span><%= live_patch "Next", to: Routes.live_path(@socket, PlayersLive, %{page: @page + 1}) %></span>
-        <% end %>
+        <div class="btn-group">
+          <%= if @page > 1 do %>
+          <span ><%= live_patch "Prev", to: Routes.live_path(@socket, PlayersLive, %{page: @page - 1}) %></span>
+          <% end %>
+          <%= for i <- @page..(@page + 4), i > 0, i < (@total / @per_page) + 1 do %>
+            <span><%= live_patch "#{i}", to: Routes.live_path(@socket, PlayersLive, %{page: i}) %></span>
+          <% end %>
+          <%= if @page < @total / @per_page do %>
+          <span><%= live_patch "Next", to: Routes.live_path(@socket, PlayersLive, %{page: @page + 1}) %></span>
+          <% end %>
+        </div>
       </div>
     </div>
   </section>

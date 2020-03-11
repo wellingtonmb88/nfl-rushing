@@ -2,19 +2,24 @@
 We have sets of records representing football players' rushing statistics. 
 
 # Technology 
-  - Elixir
-  - Phoenix
-  - Phoenix LiveView
-  - Flow
-  - Absinthe GraphQl
-  - ExUnit
-  - ExCoveralls
-  - Credo 
-  - ReactJs
-  - Typescript
-  - Appolo
-  - Material UI
-  - Jest
+  - Elixir [1.10.2](https://hexdocs.pm/elixir)
+  - Phoenix [1.4.13](https://hexdocs.pm/phoenix/overview.html)
+  - [Phoenix LiveView](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
+  - [Agent](https://hexdocs.pm/elixir/Agent.html)
+  - [Flow](https://hexdocs.pm/flow/Flow.html)
+  - [Absinthe-GraphQl](http://absinthe-graphql.org/)
+  - [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+  - [ExCoveralls](https://hexdocs.pm/excoveralls/api-reference.html)
+  - [Credo](https://hexdocs.pm/credo/Credo.html)
+  - ReactJs [16.13.0](https://reactjs.org/)
+  - [React Context](https://reactjs.org/docs/context.html)
+  - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+  - [Typescript](https://www.typescriptlang.org/)
+  - [Apollo-Client](https://www.apollographql.com/docs/react/)
+  - [Material-UI](https://material-ui.com/)
+  - [Jest](https://jestjs.io/)
+  - [Docker](https://www.docker.com/)
+  - [Docker Compose](https://docs.docker.com/compose/)
 
 All records have the following attributes:
 
@@ -64,3 +69,11 @@ All records have the following attributes:
 
 - The Backend GraphQL API Playground.
   - You can access the from `http://localhost:4000/api/graphiql`
+
+## Running Tests
+
+- Backend:
+  - `make run-backend-tests`
+  
+- Frontend:
+  - `make run-frontend-tests`

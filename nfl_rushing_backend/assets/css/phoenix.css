@@ -18,8 +18,7 @@ h6{font-size: 1.4rem; letter-spacing: 0; line-height: 1.2}
 
 .container{
   margin: 0 auto;
-  max-width: 80.0rem;
-  padding: 0 2.0rem;
+  padding: 0 10.0rem 0 10rem;
   position: relative;
   width: 100%
 }
@@ -133,30 +132,41 @@ header nav a {
   }
 } 
 
-.main {
-  margin-left: -100px;
-  width: 100%;
-}
-
 .footer { 
   margin-top: 2rem;
 }
 
-.pagination-footer { 
-  text-align: right; 
+.btn-group {
+  display:flex;
+  float: right;    
+}
+.btn-group span {
+  width: 50px;
+  height: 40px;
+  background-color: #0059d9;
+  border: 1px solid rgb(12, 3, 92);
+  border-radius: 5px;
+  margin: 1px;
+  text-align: center;
+  padding: 7px 0px;
+}
+.btn-group span a {
+  color: white; 
+  cursor: pointer; 
+}  
+
+.btn-group span:not(:last-child) {
+  border-right: none; 
 }
 
-.pagination-footer span {  
-  margin-right: 1rem;
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.button-page {  
-  background: #fff; 
-  text-align: center; 
-  width: 10px;
-}
-.button-prev-next {  
-  background: rgb(142, 23, 23); 
-  text-align: center; 
-  width: 10px;
+/* Add a background color on hover */
+.btn-group span:hover {
+  background-color: #0039d9;
 }
