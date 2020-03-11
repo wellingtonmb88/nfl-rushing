@@ -23,6 +23,7 @@ defmodule NflRushingBackendWeb do
 
       import Plug.Conn
       import NflRushingBackendWeb.Gettext
+      import Phoenix.LiveView.Controller, only: [live_render: 3]
       alias NflRushingBackendWeb.Router.Helpers, as: Routes
     end
   end
@@ -41,6 +42,7 @@ defmodule NflRushingBackendWeb do
 
       import NflRushingBackendWeb.ErrorHelpers
       import NflRushingBackendWeb.Gettext
+      import Phoenix.LiveView.Helpers
       alias NflRushingBackendWeb.Router.Helpers, as: Routes
     end
   end
@@ -50,6 +52,7 @@ defmodule NflRushingBackendWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 

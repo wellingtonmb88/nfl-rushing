@@ -15,6 +15,8 @@ config :nfl_rushing_backend, NflRushingBackendWeb.Endpoint,
   pubsub: [name: NflRushingBackend.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "GCqZFb6G"]
 
+config :phoenix, :template_engines, leex: Phoenix.LiveView.Engine
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
