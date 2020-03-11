@@ -8,7 +8,7 @@ defmodule NflRushingBackend.PlayersStoreAgent do
     end, name: __MODULE__)
   end
 
-  def list_players() do
+  def list_players do
     Agent.get(__MODULE__, & &1)
   end
 end

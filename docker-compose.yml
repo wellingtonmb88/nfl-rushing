@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  api.nfl.rushing.com: 
+    extends:
+      file: ./nfl_rushing_backend/docker-compose-dev.yml
+      service: api.nfl.rushing.com 
+    networks:
+     - nfl_rushing_network
+
+  web.nfl.rushing.com:
+    extends:
+      file: ./nfl_rushing_frontend/docker-compose.yml
+      service: web.nfl.rushing.com
+    depends_on:
+      - api.nfl.rushing.com
+    networks:
+     - nfl_rushing_network
+
+networks:
+  nfl_rushing_network:
+    driver: "bridge" 
+

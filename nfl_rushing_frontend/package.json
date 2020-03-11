@@ -29,6 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "docker:up": "docker-compose up -d",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

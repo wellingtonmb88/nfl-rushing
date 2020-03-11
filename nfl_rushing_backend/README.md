@@ -1,19 +1,20 @@
-# NflRushingBackend
+# NFL Rushing Backend
 
-To start your Phoenix server:
+To start your Phoenix server locally:
 
   * Install dependencies with `mix deps.get`
   * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * Start Backend Dev Environment with `make start-dev-server`
+  * Start Backend Release Environment with `make start-release-server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+1) Starting Backend Dev Environment with docker:
+   - `make build-and-start-dev-server`
+  
+2) Starting Backend Release Environment with docker:
+   - `make build-and-start-release-server`
 
-## Learn more
+3) Building a Release Docker Image:
+   - `make build-release-image`
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+

@@ -46,6 +46,7 @@ defmodule NflRushingBackend.MixProject do
       {:absinthe_plug, "~> 1.4.0"},
       {:cors_plug, "~> 2.0"},
       {:excoveralls, "~> 0.10", only: :test},
+      {:credo, "~> 1.2", only: [:dev, :test], runtime: false}
     ]
   end
 end

@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  web.nfl.rushing.com:
+    container_name: nfl_rushing_web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development

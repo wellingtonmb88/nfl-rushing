@@ -1,0 +1,22 @@
+# Version of docker-compose
+version: '3'
+
+# Containers we are going to run
+services:
+  # Our Phoenix container
+  api.nfl.rushing.com:
+    container_name: nfl_rushing_backend
+    # image: wellingtonmb88/nfl_rushing_backend
+    build:
+      # Here we define that it should build from the current directory
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      SECRET_KEY_BASE: Y0uRvErYsecr3TANDL0ngStr1ng
+      APP_PORT: 4000
+      APP_HOSTNAME: localhost
+    ports:
+      - '4000:4000'
+    volumes:
+      - './lib:/app/lib'

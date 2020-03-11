@@ -1,0 +1,28 @@
+# Use an official Elixir runtime as a parent image
+FROM elixir:1.9.1-alpine as builder
+
+RUN apk update && apk add git make alpine-sdk
+
+RUN apk add --update npm
+
+# Create app directory and copy the Elixir projects into it
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+
+RUN cd assets && npm install
+
+# Install hex package manager
+RUN mix local.hex --force
+
+# Install rebar
+RUN mix local.rebar --force
+
+# Get dependencies
+RUN mix deps.get
+
+RUN apk --update --no-cache add build-base make gcc libc-dev libstdc++
+
+RUN mix deps.compile
+
+ENTRYPOINT ["sh", "entrypoint-dev.sh"]

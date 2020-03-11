@@ -1,7 +1,7 @@
 defmodule NflRushingBackend.DataImporter do
   alias NflRushingBackend.Player
 
-  def get_decoded_players_list() do
+  def get_decoded_players_list do
     read_decode_json_file()
     |> Flow.from_enumerable()
     |> Flow.partition()
@@ -28,7 +28,7 @@ defmodule NflRushingBackend.DataImporter do
     |> Enum.to_list()
   end
 
-  def read_decode_json_file() do
+  def read_decode_json_file do
     with {:ok, data} <- File.read("priv/data/rushing.json"),
          {:ok, decoded} <- Jason.decode(data) do
       decoded
