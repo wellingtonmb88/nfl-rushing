@@ -46,6 +46,7 @@ defmodule NflRushingBackend.MixProject do
       {:absinthe_plug, "~> 1.4.0"},
       {:cors_plug, "~> 2.0"},
       {:phoenix_live_view, "~> 0.9.0"},
+      {:csv, "~> 2.3"},
       {:floki, ">= 0.0.0", only: :test},
       {:excoveralls, "~> 0.10", only: :test},
       {:credo, "~> 1.2", only: [:dev, :test], runtime: false}

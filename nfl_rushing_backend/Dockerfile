@@ -1,5 +1,5 @@
 # ---- Build Stage ----
-FROM elixir:1.9.1-alpine AS app_builder
+FROM elixir:1.10.2-alpine AS app_builder
 
 # Set environment variables for building the application
 ENV MIX_ENV=prod \

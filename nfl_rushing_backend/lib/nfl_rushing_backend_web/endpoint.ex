@@ -10,6 +10,9 @@ defmodule NflRushingBackendWeb.Endpoint do
     signing_salt: "AcueDoLT"
   ]
 
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: [connect_info: [session: @session_options]]
+
   socket "/socket", NflRushingBackendWeb.UserSocket,
     websocket: true,
     longpoll: false

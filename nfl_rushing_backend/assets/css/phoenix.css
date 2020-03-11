@@ -131,4 +131,32 @@ header nav a {
     flex-basis: 527px;
     margin: 2rem 1rem;
   }
+} 
+
+.main {
+  margin-left: -100px;
+  width: 100%;
+}
+
+.footer { 
+  margin-top: 2rem;
+}
+
+.pagination-footer { 
+  text-align: right; 
+}
+
+.pagination-footer span {  
+  margin-right: 1rem;
+}
+
+.button-page {  
+  background: #fff; 
+  text-align: center; 
+  width: 10px;
+}
+.button-prev-next {  
+  background: rgb(142, 23, 23); 
+  text-align: center; 
+  width: 10px;
 }

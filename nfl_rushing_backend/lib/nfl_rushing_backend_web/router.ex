@@ -18,7 +18,8 @@ defmodule NflRushingBackendWeb.Router do
   scope "/", NflRushingBackendWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/download_csv", CSVController, :export
+    live "/live/players", PlayersLive
   end
 
   scope "/api" do

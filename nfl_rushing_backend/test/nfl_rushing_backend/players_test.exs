@@ -11,7 +11,7 @@ defmodule NflRushingBackend.PlayersTest do
     end
 
     test "filter_palyers_by_name/3 returns a list of players by name" do
-      %{items: players} = Players.filter_palyers_by_name("Joe Banyard", nil, nil)
+      %{items: players} = Players.filter_palyers_by_name("Joe Banyard", 0, 5)
       assert length(players) == 1
       player = Enum.at(players, 0)
       assert player.name == "Joe Banyard"
@@ -23,21 +23,24 @@ defmodule NflRushingBackend.PlayersTest do
     end
 
     test "sorting_by/0 returns a list of players sorted by total rushing yards" do
-      %{items: players_list} = Players.sorting_by(:total_rushing_yards, 5, 10, true)
+      %{items: players} = Players.filter_palyers_by_name(nil, nil, nil)
+      players_list = Players.sorting_by(players, "total_rushing_yards")
       assert length(players_list) > 1
       player = Enum.at(players_list, 0)
-      assert player.total_rushing_yards == 420
+      assert player.total_rushing_yards == "997"
     end
 
     test "sorting_by/0 returns a list of players sorted by longest_rush" do
-      %{items: players_list} = Players.sorting_by(:longest_rush, 0, 2, false)
+      %{items: players} = Players.filter_palyers_by_name(nil, nil, nil)
+      players_list = Players.sorting_by(players, "longest_rush")
       assert length(players_list) > 1
       player = Enum.at(players_list, 0)
-      assert player.longest_rush == "15"
+      assert player.longest_rush == "85T"
     end
 
     test "sorting_by/0 returns a list of players sorted by total rushing touchdowns" do
-      %{items: players_list} = Players.sorting_by(:total_rushing_touchdowns, nil, nil, true)
+      %{items: players} = Players.filter_palyers_by_name(nil, nil, nil)
+      players_list = Players.sorting_by(players, "total_rushing_touchdowns")
       assert length(players_list) > 1
       player = Enum.at(players_list, 0)
       assert player.total_rushing_touchdowns == 18

@@ -1,0 +1,98 @@
+
+  <section class="phx-hero">
+    <h2>NFL Rushing Players Phoenix LiveView</h2>
+  </section>
+
+  <section class="container">
+    <div class="row">
+      <div class="column">
+        <form phx-change="filter">
+          <input type="text" name="q" value="<%= @query %>" list="matches" placeholder="Filter..." phx-debounce="200" />
+        </form>
+      </div>
+      <div class="column">
+        <a class="button" href="/download_csv?query=<%= @query%>&page=<%= @page %>&per_page=<%= @per_page %>">Export CSV From Page: <%= @page%></a>
+      </div>
+      <div class="column">
+        <a class="button" href="/download_csv?all_table=true">Export CSV From All table</a>
+      </div>
+    </div>
+  </section>
+  <section class="container main">
+    <table  phx-keydown-window="keydown" phx-throttle="500">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Team</th>
+          <th>Position</th>
+          <th>
+            <%= live_patch "Lng", to: Routes.live_path(@socket, PlayersLive, %{sort_by: "longest_rush"}) %>
+          </th>
+          <th>
+            <%= live_patch "Yds", to: Routes.live_path(@socket, PlayersLive, %{sort_by: "total_rushing_yards"}) %>
+          </th>
+          <th>
+            <%= live_patch "TD", to: Routes.live_path(@socket, PlayersLive, %{sort_by: "total_rushing_touchdowns"}) %>
+          </th>
+          <th>Att</th>
+          <th>Att/G</th>
+          <th>Avg</th>
+          <th>Yds/G</th>
+          <th>1st</th>
+          <th>1st%</th>
+          <th>20+</th>
+          <th>40+</th>
+          <th>FUM</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for player <- @players do %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.team %></td>
+          <td><%= player.position %></td>
+          <td><%= player.longest_rush %></td>
+          <td><%= player.total_rushing_yards %></td>
+          <td><%= player.total_rushing_touchdowns %></td>
+          <td><%= player.rushing_attempts %></td>
+          <td><%= player.rushing_attempts_per_game %></td>
+          <td><%= player.rushing_avg_yards_per_attempt %></td>
+          <td><%= player.rushing_yards_per_game %></td>
+          <td><%= player.rushing_first_downs %></td>
+          <td><%= player.rushing_first_downs_percentage %></td>
+          <td><%= player.rushing_twenty_plus_yeards %></td>
+          <td><%= player.rushing_forty_plus_yeards %></td>
+          <td><%= player.rushing_fumbles %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+  <section class="container footer">
+    <div class="row">
+      <div class="column">
+        <form phx-change="update_rows_per_page">
+          <span>Rows per page:</span>
+          <select name="per_page" onchange="this.blur()">
+            <option value="5" <%= if @per_page == 5, do: "selected" %> >5</option>
+            <option value="10" <%= if @per_page == 10, do: "selected" %> >10</option>
+            <option value="15" <%= if @per_page == 15, do: "selected" %> >15</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="column pagination-footer">
+        <%= if @page > 1 do %>
+        <span ><%= live_patch "Prev", to: Routes.live_path(@socket, PlayersLive, %{page: @page - 1}) %></span>
+        <% end %>
+        <%= for i <- (@page - @per_page)..(@page + @per_page), i > 0, i < (@total / @per_page) + 1 do %>
+        <span><%= live_patch "#{i}", to: Routes.live_path(@socket, PlayersLive, %{page: i}) %></span>
+        <% end %>
+
+        <%= if @page < @total / @per_page do %>
+        <span><%= live_patch "Next", to: Routes.live_path(@socket, PlayersLive, %{page: @page + 1}) %></span>
+        <% end %>
+      </div>
+    </div>
+  </section>
